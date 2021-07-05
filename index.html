@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="//db.onlinewebfonts.com/c/ba047a29b78bffd9a985b2e86b289fe8?family=MWF+MDL2+Assets"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <style>
+      /* Set default settings for good adaptive */
+      html {
+        font-size: 14.5px !important;
+      }
+
+      body {
+        margin: 0;
+
+        font-family: "Segoe UI", sans-serif;
+        font-size: 1rem;
+        color: black;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+
+      /* Header */
+
+      .header {
+        max-width: 100%;
+        position: relative;
+        padding: 0 76px;
+        height: 54px;
+        margin-bottom: 2px;
+      }
+
+      .header__inner {
+        display: flex;
+        height: 54px;
+      }
+
+      .header__left__icon {
+        padding: 16px 6px 16px 10px;
+        height: 54px;
+        width: 137px;
+        margin-right: 4px;
+        margin-left: 8px;
+      }
+
+      .header__img {
+        cursor: pointer;
+        max-width: none;
+        width: 120px;
+      }
+
+      .header__surface {
+        display: flex;
+        align-items: center;
+
+        padding: 16px 6px 16px 10px;
+        height: 100%;
+        margin-top: 3px;
+        outline-offset: -2px;
+        width: 85px;
+      }
+
+      .header__surface::before {
+        border-left: 2.5px solid #000;
+        height: 26px;
+        content: " ";
+        margin-left: 7px;
+        top: 15px;
+        left: -6px;
+        margin-right: 20px;
+      }
+
+      .header__surface-text {
+        display: block;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: -3px;
+        text-decoration: none;
+        color: black;
+      }
+
+      .header__surface-text:hover {
+        border-bottom: 2.5px solid black;
+      }
+
+      /* Header nav */
+
+      .nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 643px;
+        margin-top: 4px;
+        margin-left: 3px;
+      }
+
+      .nav__item__link {
+        text-decoration: none;
+        color: black;
+
+        font-size: 14.5px;
+
+        width: 50px;
+      }
+
+      .nav__item__link:hover {
+        border-bottom: 2.5px solid black;
+      }
+
+      .nav__item__select {
+        padding: 16px 6px 16px 12px;
+        border: 1px dotted black;
+        background: none;
+        cursor: pointer;
+        border: none;
+      }
+
+      .nav__item__select:focus {
+        border: 1px dashed black;
+        background: #e6e6e6;
+      }
+
+      .nav__item {
+        color: rgba(0, 0, 0, 0.8);
+        border: none;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .nav__item:after {
+        text-decoration: underline;
+      }
+
+      .nav__all {
+        position: absolute;
+        right: 0;
+        padding: 0 76px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-top: 4px;
+        margin-left: 110px;
+      }
+
+      .nav__all__link {
+        font-size: 14.5px;
+        color: black;
+        text-decoration: none;
+      }
+
+      .nav__all__link:hover {
+        border-bottom: 2.5px solid black;
+      }
+
+      .nav__interactions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 25px;
+        margin-right: 24px;
+      }
+
+      .nav__interactions__item:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      .nav__interactions__img {
+        cursor: pointer;
+        width: 33px;
+      }
+
+      .nav__interactions__img-size {
+        cursor: pointer;
+        width: 50px;
+        margin: 6px;
+      }
+
+      .burger {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 50px;
+        height: 50px;
+      }
+
+      .burger__inner {
+        position: relative;
+        width: 20px;
+        height: 1px;
+        background: black;
+      }
+
+      .burger__inner::before {
+        position: absolute;
+        display: block;
+        content: "";
+        background: black;
+        width: 20px;
+        height: 1px;
+        top: 5px;
+      }
+
+      .burger__inner::after {
+        position: absolute;
+        display: block;
+        content: "";
+        background: black;
+        width: 20px;
+        height: 1px;
+        bottom: 5px;
+      }
+
+      .nav__interactions__item-move {
+        display: none;
+      }
+
+      .nav__interactions__text {
+        margin-top: 7px;
+      }
+
+      .header__surface-second {
+        display: none;
+      }
+
+      .nav__item__select-surface {
+        display: none;
+        padding: 4px;
+        border: 0;
+      }
+
+      .nav__item__select-surface:focus {
+        border: 1px dashed black;
+        background: #e6e6e6;
+      }
+
+      /* Media */
+
+      @media (max-width: 1440px) {
+        .nav__interactions__text {
+          display: none;
+        }
+      }
+
+      @media (max-width: 1330px) {
+        .nav__item__select:nth-child(4) {
+          display: none;
+        }
+
+        .nav {
+          width: 500px;
+        }
+      }
+
+      @media (max-width: 1256px) {
+        .header {
+          padding: 0 35px;
+        }
+
+        .nav__all {
+          padding: 0 35px;
+        }
+      }
+
+      @media (max-width: 1175px) {
+        .nav__item__select:nth-child(3) {
+          display: none;
+        }
+        .nav {
+          width: 400px;
+        }
+      }
+
+      @media (max-width: 1131px) {
+        .nav__item__select:nth-child(2) {
+          display: none;
+        }
+        .nav {
+          width: 250px;
+        }
+      }
+
+      @media (max-width: 1050px) {
+        .nav,
+        .nav__item__select,
+        .header__surface {
+          display: none;
+        }
+
+        .header {
+          padding: 0 20px;
+          position: relative;
+        }
+
+        .header__inner {
+          display: flex;
+          justify-content: center;
+        }
+
+        .burger {
+          display: flex;
+          position: absolute;
+          left: 0;
+        }
+
+        .nav__interactions {
+          margin-right: 0;
+        }
+
+        .nav__interactions__item:first-of-type {
+          display: none;
+        }
+
+        .nav__interactions__item-move {
+          display: flex;
+          position: absolute;
+          left: 60px;
+        }
+
+        .header__surface-second {
+          left: 0;
+          background: #fff;
+          border-bottom: 1px solid #e6e6e6;
+          border-top: 1px solid #e6e6e6;
+          display: flex;
+          align-items: center;
+          height: 34px;
+          position: absolute;
+          width: 100%;
+          top: 54px;
+          padding-left: 20px;
+          border-left: none;
+          border-right: none;
+        }
+
+        .header__surface-text-second {
+          font-size: 15px;
+        }
+
+        .nav__all {
+          padding-right: 0;
+          margin-top: 0;
+        }
+
+        .nav__item__select-surface {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <div class="burger__items"></div>
+        <div class="burger">
+          <div class="burger__inner"></div>
+
+          <div class="nav__interactions__item nav__interactions__item-move">
+            <img
+              class="nav__interactions__img"
+              src="https://b.radikal.ru/b20/2107/21/b0a4a9410388.png"
+              alt="loupe"
+            />
+          </div>
+        </div>
+        <div class="header__left__icon">
+          <img
+            class="header__img"
+            src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31"
+            alt="Microsoft"
+          />
+        </div>
+
+        <div class="header__surface">
+          <a href="#" class="header__surface-text">Surface</a>
+        </div>
+
+        <nav class="nav">
+          <div class="nav__item__select" tabindex="0">
+            <select class="nav__item" style="font-size: 14px">
+              <option class="nav__item__link">Computers</option>
+            </select>
+          </div>
+          <div class="nav__item__select" tabindex="0">
+            <select class="nav__item">
+              <option class="nav__item__link">Computers for Business</option>
+            </select>
+          </div>
+          <div class="nav__item__select" tabindex="0">
+            <select class="nav__item">
+              <option class="nav__item__link">Accessories</option>
+            </select>
+          </div>
+          <div class="nav__item__select" tabindex="0">
+            <select class="nav__item">
+              <option class="nav__item__link">Shop now</option>
+            </select>
+          </div>
+          <div class="nav__item__select" tabindex="0">
+            <div class="nav__item">
+              <a class="nav__item__link" href="#">Support</a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="nav__all">
+          <div class="nav__item__select" tabindex="0">
+            <select class="nav__item" style="font-size: 14px">
+              <option class="nav__item__link">All Microsoft</option>
+            </select>
+            </div>
+        </a>
+          <div class="nav__interactions">
+            <p class="nav__interactions__text">Search</p>
+            <div class="nav__interactions__item">
+              <img
+                class="nav__interactions__img"
+                src="https://b.radikal.ru/b20/2107/21/b0a4a9410388.png"
+                alt="loupe"
+              />
+            </div>
+            <p class="nav__interactions__text">Cart</p>
+            <div class="nav__interactions__item">
+              <img
+                class="nav__interactions__img"
+                src="https://b.radikal.ru/b02/2107/33/66c1954ab657.png"
+                alt="basket"
+              />
+            </div>
+            <p class="nav__interactions__text">Sign In</p>
+            <div class="nav__interactions__item">
+              <img
+                class="nav__interactions__img-size"
+                src="https://c.radikal.ru/c05/2107/db/ab93984b5db0.png"
+                alt="user"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="header__surface-second">
+        <select class="nav__item__select-surface">
+        <option
+          href="#"
+          class="header__surface-text header__surface-text-second">
+          Surface
+        </option>
+      </select>
+      </div>
+  </body>
+</html>
