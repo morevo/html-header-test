@@ -188,12 +188,12 @@
 
   .nav__interactions__img {
     cursor: pointer;
-    width: 33px;
+    width: 30px;
   }
 
   .nav__interactions__img-size {
     cursor: pointer;
-    width: 50px;
+    width: 42px;
     margin: 6px;
   }
 
@@ -258,9 +258,21 @@
 
   /* Media */
 
-  @media (max-width: 1440px) {
+  @media (max-width: 1400px) {
     .nav__interactions__text {
       display: none;
+    }
+
+    .nav__interactions__item:not(:last-child) {
+      margin-right: 5px;
+    }
+
+    .header {
+      margin-top: 6px;
+    }
+
+    .header__left__icon {
+      margin-left: 60px;
     }
   }
 
@@ -271,6 +283,10 @@
 
     .nav {
       width: 500px;
+    }
+
+    .nav__interactions__item {
+      margin-right: 0;
     }
   }
 
